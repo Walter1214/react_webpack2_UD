@@ -1,5 +1,7 @@
 import React from 'react';
-import Main from '../../component/main/index';
+import './style.scss';
+import GroupList from '../../component/GroupList/index';
+import PostSubmission from '../../component/PostSubmission/index';
 
 class Footer extends React.Component {
 	constructor(props) {
@@ -9,9 +11,10 @@ class Footer extends React.Component {
 	}
 	render() {
 		return (
-			<div>
-				<h1>Hi Footer!</h1>
-				<Main />
+			<div className="footer">
+				<span>Groups</span>
+				<GroupList />
+				<PostSubmission />
 			</div>
 		);
 	}
