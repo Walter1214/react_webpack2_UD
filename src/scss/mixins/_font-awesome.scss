@@ -1,0 +1,15 @@
+@mixin font-awesome($char, $pseudo: "before") {
+  &:#{$pseudo} {
+    content: $char;
+    @include font-awesome-style;
+  }
+}
+
+@mixin font-awesome-style() {
+  display: inline-block;
+  font-family: FontAwesome;
+  vertical-align: middle;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

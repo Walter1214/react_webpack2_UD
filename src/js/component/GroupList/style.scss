@@ -1,26 +1,29 @@
-.group_list{
+.group__list {
   font-size: 0;
-  ul{
+  ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-  li{
-    display: inline-flex;
-    align-items: center;
-    background-color: #f4f4f4;
-    width: 180px;
-    height: 55px;
+  li {
+    display: inline-block;
     margin-right: 20px;
-    border-radius: 30px ;
-    img{
-      width: 45px;
-      height: 45px;
-      margin: 0 10px 0 3px;
+    vertical-align: middle;
+    a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      background-color: #f4f4f4;
       border-radius: 30px;
-      border: 1px solid red;
+      text-decoration: none;
+      box-sizing: border-box;
+      border: 2px solid #f4f4f4;
+      &:hover{
+        border: 2px solid #f7a21a;  
+      }
     }
-    span{
+    span {
       display: inline-block;
       font-size: 14px;
       color: #312f4b;
@@ -29,6 +32,39 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    picture{
+      position: relative;
+    }
+    p.gruop__list--Red-Point{
+      position: absolute;
+      background: linear-gradient(0deg,#ed3b6c,#ed3b6c);
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      border: 2px solid white;
+      left: 37px;
+      top: 0px;
+    }
+  }
+  li.group__list--group {
+    width: 180px;
+    height: 55px;
+    img {
+      width: 45px;
+      height: 45px;
+      margin: 0 10px 0 5px;
+      border-radius: 30px;
+      box-sizing: border-box;
+      // border: 1px solid red;
+    }
+  }
+  li.group__list--more {
+    width: 55px;
+    height: 55px;
+    margin-right: 0;
+    a {
+      justify-content: center;
     }
   }
 }

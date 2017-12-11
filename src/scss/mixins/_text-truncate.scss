@@ -1,0 +1,21 @@
+ // width
+@mixin text-truncate($width: 100%) {
+  width: $width;
+  white-space: nowrap;
+  @include text-truncate-style;
+}
+
+@mixin multiline-text-truncate($line-to-show, $font-size: 1em, $line-height: $line-height-base) {
+  display: block; // fallback
+  display: -webkit-box;
+  line-height: $line-height;
+  height: $font-size * $line-height * $line-to-show; // fallback
+  -webkit-line-clamp: $line-to-show;
+  -webkit-box-orient: vertical;
+  @include text-truncate-style;
+}
+
+@mixin text-truncate-style() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

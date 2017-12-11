@@ -1,0 +1,168 @@
+//
+// Reset box-sizing
+//
+
+// https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+//
+// Stick footer at bottom
+//
+
+// https://css-tricks.com/couple-takes-sticky-footer/
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+
+//
+// Document
+//
+
+html {
+  font-size: $body-font-size;
+}
+
+body {
+  color: $text-color-content;
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  line-height: $body-line-height;
+  letter-spacing: $body-letter-spacing;
+}
+
+
+//
+// Status
+//
+
+:disabled,
+[disabled] {
+  cursor: not-allowed !important;
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+
+//
+// Link
+//
+
+a {
+  background-color: transparent; // Remove the gray background on active links in IE 10.
+  -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
+  @include plain-hover-focus {
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+
+//
+// Form
+//
+
+// Clear `clear` button on input with 'password' type in IE
+// https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-clear
+// https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-reveal
+
+input {
+  @include hover-focus {
+    outline: none;
+  }
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+}
+
+// Reset button
+
+button {
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  border: none;
+  @include hover-focus {
+    outline: none;
+  }
+}
+
+// Turn off textarea resize in Chrome
+
+textarea {
+  resize: none;
+  @include hover-focus {
+    outline: none;
+  }
+}
+
+
+//
+// Image
+//
+
+// Remove default margin
+
+figure {
+  margin: 0;
+}
+
+// https://css-tricks.com/almanac/properties/v/vertical-align/
+
+img {
+  vertical-align: middle;
+}
+
+
+//
+// Typography
+//
+
+// Remove defalut margin / padding / list-style
+
+ul,
+ol,
+dl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}

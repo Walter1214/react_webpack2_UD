@@ -1,0 +1,12 @@
+@mixin image-centre($height) {
+  height: $height;
+  line-height: $height;
+  text-align: center;
+  overflow: hidden;
+
+  > img {
+    margin: -100%;
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
