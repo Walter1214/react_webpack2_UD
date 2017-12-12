@@ -1,4 +1,35 @@
 @import "../../scss/main.scss";
+
+@mixin cross-btn($size) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  &:before {
+    content: "";
+    width: $size;
+    height: 1px;
+    display: inline-block;
+    position: absolute;
+    top: ($size / 2);
+    left: 0;
+    background-color: #212428;
+    transform: rotate(45deg);
+  }
+  &:after{
+    content: "";
+    width: $size;
+    height: 1px;
+    display: inline-block;
+    position: absolute;
+    top: ($size / 2);
+    left: 0;
+    background-color: #212428;
+    transform: rotate(-45deg);
+  }
+}
+
+
+
 .post__submission--buttom {
   display: flex;
   align-items: center;
@@ -19,17 +50,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  // visibility: hidden;  
+  pointer-events: none;
+  transition: opacity .5s ease-in-out;
+  opacity: 0;
+  &.ON{
+    // visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+  }
 }
 
 .post__submission--container {
-  // width: 500px;
-  // height: 500px;
   z-index: index($zIndexs, 'popup');
   width: 500px;
+  display: none;
+  &.ON{
+    display: block;
+  }
 }
 
 .post__submission--content {
   padding: 20px 15px 40px 15px;
+  position: relative;
   background-color: #ffffff;
   border-radius: 20px;
   margin-bottom: 10px;
@@ -38,7 +81,7 @@
     height: 285px;
     border: none;
     letter-spacing: 1px;
-    &::placeholder {
+    &:placeholder {
       opacity: .8;
     }
   }
@@ -46,4 +89,19 @@
 
 .post__submission_palette {
   float: right;
+}
+
+.post__submission--close-buttom{
+
+  right: 20px;
+  top: 20px;
+  @include cross-btn(20px);
+}
+
+.post__submission--vote{
+  z-index: index($zIndexs, 'popup');
+  display: none;
+  &.ON{
+    display: block;
+  }
 }
