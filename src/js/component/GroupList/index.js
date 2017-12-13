@@ -16,44 +16,46 @@ class Main extends React.Component {
 				<ul>
 					<li className="group-list__group">
 						<a href="javascript:;">
-							<picture>
+							<figure>
 								<p className="group-list__red-point"></p>
 								<img src={groupLogoUrl}></img>
-							</picture>
+							</figure>
 							<span>UED Team</span>
 						</a>
 					</li>
 					<li className="group-list__group">
 						<a href="javascript:;">
-							<picture>
+							<figure>
 								<p className="group-list__red-point"></p>
 								<img src={groupLogoUrl}></img>
-							</picture>
+							</figure>
 							<span>UED Team</span>
 						</a>
 					</li>
 					<li className="group-list__group">
 						<a href="javascript:;">
-							<picture>
+							<figure>
 								<p className="group-list__red-point"></p>
 								<img src={groupLogoUrl}></img>
-							</picture>
+							</figure>
 							<span>UED Team</span>
 						</a>
 					</li>
 					<li className="group-list__group">
 						<a href="javascript:;">
-							<picture>
+							<figure>
+								<p className="group-list__red-point"></p>
 								<img src={groupLogoUrl}></img>
-							</picture>
+							</figure>
 							<span>UED Team</span>
 						</a>
 					</li>
 					<li className="group-list__group">
 						<a href="javascript:;">
-							<picture>
+							<figure>
+								<p className="group-list__red-point"></p>
 								<img src={groupLogoUrl}></img>
-							</picture>
+							</figure>
 							<span>UED Team</span>
 						</a>
 					</li>

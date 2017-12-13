@@ -1,8 +1,9 @@
 import React from 'react';
 import './style.scss';
-import postSubmissionLogo from '../../../asset/img/post_submission_logo.png';
+// import postSubmissionLogo from '../../../asset/img/post_submission_logo.pnsg';
+import postSubmissionBtn from '../../../asset/img/post_submission_btn.png';
+import postSubmissionBtnHover from '../../../asset/img/post_submission_btn_hover.png';
 import postSubmissionPalette from '../../../asset/img/post_submission_palette.png';
-import postSubmissionControl from '../../../asset/img/post_submission_control.png';
 import postSubmissionVote from '../../../asset/img/post_submission_vote.png';
 
 
@@ -11,23 +12,26 @@ class PostSubmission extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			IsOpenPopup:false,
-			openIndex: 0,
+			isOpenPopup:false,
+			isVote: false,
 		};
 		this.closePopup = this.closePopup.bind(this);
 		this.openPopup = this.openPopup.bind(this);
 		this.openVote = this.openVote.bind(this);
-		this.openDefault = this.openDefault.bind(this);
+		this.closeVote = this.closeVote.bind(this);
 	}
 	render() {
 		return (
 			<div className="post-submission">
-				<a href="javascript:;" className="post-submission--button" onClick={this.openPopup}>
-					<img src={postSubmissionLogo}></img>
+				<a href="javascript:;" className="post-submission__button" onClick={this.openPopup}>
+					<img src={postSubmissionBtn}></img>
+					<img src={postSubmissionBtnHover}></img>
 				</a>
-				<div className={'post-submission--popup ' + (this.state.IsOpenPopup ? 'ON' : '')}>
-					{this.writePost()}
-					{this.writeVote()}
+				<div className={'post-submission__popup ' + (this.state.isOpenPopup ? 'is-on' : '')}>
+					<div className={'post-submission__wrapper '+(this.state.isOpenPopup ? 'is-on ' : '') + (this.state.isVote ? 'is-switch' : '')}>
+						{this.writePost()}
+						{this.writeVote()}
+					</div>
 				</div>
 			</div>
 		);
@@ -35,15 +39,14 @@ class PostSubmission extends React.Component {
 
 	writePost(){
 		return(
-			<div className={'post-submission--write-post ' +(this.state.openIndex === 0 ? 'ON' : '')}>
-				<div className="post-submission--content">
-					<a href="javascript:;" className="post-submission--close-button" onClick={this.closePopup}>
+			<div className="post-submission__container post-submission__container--front">
+				<div className="post-submission__writing">
+					<a href="javascript:;" className="post-submission__close-button" onClick={this.closePopup}>
 					</a>
 					<textarea placeholder="撰寫貼文..."></textarea>
-					<img className="post-submission_palette" src={postSubmissionPalette}></img>
+					<img className="post-submission__palette" src={postSubmissionPalette}></img>
 				</div>
-				<a href="javascript:;" onClick={this.openVote}>
-					<img src={postSubmissionControl}></img>
+				<a href="javascript:;" className="post-submission__control" onClick={this.openVote}>
 				</a>
 			</div>
 		);
@@ -51,8 +54,8 @@ class PostSubmission extends React.Component {
 
 	writeVote(){
 		return(	
-			<div className={'post-submission--vote ' +(this.state.openIndex === 1 ? 'ON' : '')}>
-				<a href="javascript:;" onClick={this.openDefault}>
+			<div className="post-submission__container post-submission__container--back">
+				<a href="javascript:;" onClick={this.closeVote}>
 					<img src={postSubmissionVote}></img>
 				</a>	
 			</div>
@@ -60,19 +63,19 @@ class PostSubmission extends React.Component {
 	}
 
 	closePopup(){
-		this.setState({IsOpenPopup:false});
+		this.setState({isOpenPopup:false});
 		return false;
 	}
 	openPopup(){
-		this.setState({IsOpenPopup:true});
+		this.setState({isOpenPopup:true});
 	}
 
 	openVote(){
-		this.setState({openIndex:1});
+		this.setState({isVote:true});
 	}
 
-	openDefault(){
-		this.setState({openIndex:0});
+	closeVote(){
+		this.setState({isVote:false});
 	}
 	
 }

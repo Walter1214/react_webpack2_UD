@@ -19,6 +19,7 @@
       text-decoration: none;
       box-sizing: border-box;
       border: 2px solid #f4f4f4;
+      transition: border 1s;
       &:hover{
         border: 2px solid #f7a21a;  
       }
@@ -33,7 +34,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    picture{
+    figure{
       position: relative;
     }
     p.group-list__red-point{
