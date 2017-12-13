@@ -7,55 +7,41 @@ class Main extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			groupList:[
-				{imgUrl: groupLogoUrl,name:'UED Team'}
-			]
 		};
 	}
 
 	render() {
 		return (
-			<div className="group__list">
-				
+			<div className="group-list">
 				<ul>
-					{/* {
-						this.state.groupList.forEach((element) => {
-							return (
-								<li>
-									<img src={element.img}></img>
-									<span>{element.name}</span>
-								</li>
-							);
-						})
-					} */}
-					<li className="group__list--group">
+					<li className="group-list__group">
 						<a href="javascript:;">
 							<picture>
-								<p className="gruop__list--Red-Point"></p>
+								<p className="group-list__red-point"></p>
 								<img src={groupLogoUrl}></img>
 							</picture>
 							<span>UED Team</span>
 						</a>
 					</li>
-					<li className="group__list--group">
+					<li className="group-list__group">
 						<a href="javascript:;">
 							<picture>
-								<p className="gruop__list--Red-Point"></p>
+								<p className="group-list__red-point"></p>
 								<img src={groupLogoUrl}></img>
 							</picture>
 							<span>UED Team</span>
 						</a>
 					</li>
-					<li className="group__list--group">
+					<li className="group-list__group">
 						<a href="javascript:;">
 							<picture>
-								<p className="gruop__list--Red-Point"></p>
+								<p className="group-list__red-point"></p>
 								<img src={groupLogoUrl}></img>
 							</picture>
 							<span>UED Team</span>
 						</a>
 					</li>
-					<li className="group__list--group">
+					<li className="group-list__group">
 						<a href="javascript:;">
 							<picture>
 								<img src={groupLogoUrl}></img>
@@ -63,7 +49,7 @@ class Main extends React.Component {
 							<span>UED Team</span>
 						</a>
 					</li>
-					<li className="group__list--group">
+					<li className="group-list__group">
 						<a href="javascript:;">
 							<picture>
 								<img src={groupLogoUrl}></img>
@@ -71,7 +57,7 @@ class Main extends React.Component {
 							<span>UED Team</span>
 						</a>
 					</li>
-					<li className="group__list--more">
+					<li className="group-list__more">
 						<a href="javascript:;">
 							<img src={groupMore}></img>
 						</a>

@@ -1,4 +1,4 @@
-.group__list {
+.group-list {
   font-size: 0;
   ul {
     list-style-type: none;
@@ -36,7 +36,7 @@
     picture{
       position: relative;
     }
-    p.gruop__list--Red-Point{
+    p.group-list__red-point{
       position: absolute;
       background: linear-gradient(0deg,#ed3b6c,#ed3b6c);
       width: 12px;
@@ -47,7 +47,7 @@
       top: 0px;
     }
   }
-  li.group__list--group {
+  li.group-list__group {
     width: 180px;
     height: 55px;
     img {
@@ -59,7 +59,7 @@
       // border: 1px solid red;
     }
   }
-  li.group__list--more {
+  li.group-list__more {
     width: 55px;
     height: 55px;
     margin-right: 0;

@@ -1,4 +1,4 @@
-@import "../../scss/main.scss";
+@import "../../../scss/base.scss";
 
 @mixin cross-btn($size) {
   position: absolute;
@@ -28,20 +28,32 @@
   }
 }
 
+@mixin fade-in-fade-out() {
+  visibility: hidden;  
+  transition: opacity, visibility;
+  transition-duration: .5s;
+  transition-timing-function: ease-in-out;
+  opacity: 0;
+  &.ON{
+    visibility: visible;
+    opacity: 1;
+  }
+}
 
 
-.post__submission--buttom {
+
+.post-submission--button {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 85px;
   height: 85px;
   border-radius: 30px;
-  background: linear-gradient(90deg, #f89916, #fb7204);
+  background: linear-gradient(-45deg, #e88e03, #fccf00);
   box-shadow: 0px 0px 60px rgba(247, 162, 26, 0.4);
 }
 
-.post__submission--popup {
+.post-submission--popup {
   @include overlay(index($zIndexs, 'overlay'), #000000, .78, "before", fixed);
   width: 100%;
   height: 100%;
@@ -50,18 +62,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // visibility: hidden;  
-  pointer-events: none;
-  transition: opacity .5s ease-in-out;
-  opacity: 0;
-  &.ON{
-    // visibility: visible;
-    pointer-events: auto;
-    opacity: 1;
-  }
+  @include fade-in-fade-out();
 }
 
-.post__submission--container {
+.post-submission--write-post {
   z-index: index($zIndexs, 'popup');
   width: 500px;
   display: none;
@@ -70,7 +74,7 @@
   }
 }
 
-.post__submission--content {
+.post-submission--content {
   padding: 20px 15px 40px 15px;
   position: relative;
   background-color: #ffffff;
@@ -87,18 +91,18 @@
   }
 }
 
-.post__submission_palette {
+.post-submission_palette {
   float: right;
 }
 
-.post__submission--close-buttom{
+.post-submission--close-button{
 
   right: 20px;
   top: 20px;
   @include cross-btn(20px);
 }
 
-.post__submission--vote{
+.post-submission--vote{
   z-index: index($zIndexs, 'popup');
   display: none;
   &.ON{
