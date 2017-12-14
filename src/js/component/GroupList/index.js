@@ -35,7 +35,6 @@ class Main extends React.Component {
 					<li className="group-list__group">
 						<a href="javascript:;">
 							<figure>
-								<p className="group-list__red-point"></p>
 								<img src={groupLogoUrl}></img>
 							</figure>
 							<span>UED Team</span>
@@ -53,7 +52,6 @@ class Main extends React.Component {
 					<li className="group-list__group">
 						<a href="javascript:;">
 							<figure>
-								<p className="group-list__red-point"></p>
 								<img src={groupLogoUrl}></img>
 							</figure>
 							<span>UED Team</span>
